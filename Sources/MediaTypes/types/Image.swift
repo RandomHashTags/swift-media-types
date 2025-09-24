@@ -1,7 +1,7 @@
 
 #if Image
 
-public enum HTTPMediaTypeImage: HTTPMediaTypeProtocol {
+public enum MediaTypeImage: MediaTypeProtocol {
     case aces
     case apng
     case avci
@@ -178,7 +178,7 @@ public enum HTTPMediaTypeImage: HTTPMediaTypeProtocol {
 }
 
 #if ImageFileExtensionInit
-extension HTTPMediaTypeImage {
+extension MediaTypeImage {
     #if Inlinable
     @inlinable
     #endif
@@ -194,7 +194,7 @@ extension HTTPMediaTypeImage {
 #endif
 
 #if ImageRawValues
-extension HTTPMediaTypeImage: RawRepresentable {
+extension MediaTypeImage: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

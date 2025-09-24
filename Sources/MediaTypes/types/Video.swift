@@ -1,7 +1,7 @@
 
 #if Video
 
-public enum HTTPMediaTypeVideo: HTTPMediaTypeProtocol {
+public enum MediaTypeVideo: MediaTypeProtocol {
     case _1dInterleavedParityfec
     case _3gpp
     case _3gpp2
@@ -202,7 +202,7 @@ public enum HTTPMediaTypeVideo: HTTPMediaTypeProtocol {
 }
 
 #if VideoFileExtensionInit
-extension HTTPMediaTypeVideo {
+extension MediaTypeVideo {
     #if Inlinable
     @inlinable
     #endif
@@ -218,7 +218,7 @@ extension HTTPMediaTypeVideo {
 #endif
 
 #if VideoRawValues
-extension HTTPMediaTypeVideo: RawRepresentable {
+extension MediaTypeVideo: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

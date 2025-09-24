@@ -1,7 +1,7 @@
 
 #if Application
 
-public enum HTTPMediaTypeApplication: HTTPMediaTypeProtocol {
+public enum MediaTypeApplication: MediaTypeProtocol {
     case calendarJSON
     case calendarXML
     case dns
@@ -154,7 +154,7 @@ public enum HTTPMediaTypeApplication: HTTPMediaTypeProtocol {
 }
 
 #if ApplicationFileExtensionInit
-extension HTTPMediaTypeApplication {
+extension MediaTypeApplication {
     #if Inlinable
     @inlinable
     #endif
@@ -192,7 +192,7 @@ extension HTTPMediaTypeApplication {
 #endif
 
 #if ApplicationRawValues
-extension HTTPMediaTypeApplication: RawRepresentable {
+extension MediaTypeApplication: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

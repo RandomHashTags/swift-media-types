@@ -3,11 +3,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-http-media-types",
+    name: "swift-media-types",
     products: [
         .library(
-            name: "HTTPMediaTypes",
-            targets: ["HTTPMediaTypes"]
+            name: "MediaTypes",
+            targets: ["MediaTypes"]
         )
     ],
     traits: [
@@ -107,12 +107,12 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "HTTPMediaTypes"
+            name: "MediaTypes"
         ),
         .testTarget(
-            name: "swift-http-media-typesTests",
+            name: "swift-media-typesTests",
             dependencies: [
-                "HTTPMediaTypes"
+                "MediaTypes"
             ]
         )
     ]

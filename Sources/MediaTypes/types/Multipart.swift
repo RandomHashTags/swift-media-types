@@ -1,7 +1,7 @@
 
 #if Multipart
 
-public enum HTTPMediaTypeMultipart: HTTPMediaTypeProtocol {
+public enum MediaTypeMultipart: MediaTypeProtocol {
     case alternative
     case appledouble
     case byteranges
@@ -54,7 +54,7 @@ public enum HTTPMediaTypeMultipart: HTTPMediaTypeProtocol {
 }
 
 #if MultipartFileExtensionInit
-extension HTTPMediaTypeMultipart {
+extension MediaTypeMultipart {
     #if Inlinable
     @inlinable
     #endif
@@ -68,7 +68,7 @@ extension HTTPMediaTypeMultipart {
 #endif
 
 #if MultipartRawValues
-extension HTTPMediaTypeMultipart: RawRepresentable {
+extension MediaTypeMultipart: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

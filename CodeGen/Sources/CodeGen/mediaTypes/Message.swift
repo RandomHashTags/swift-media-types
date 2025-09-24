@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var messageMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var messageMediaTypes: [MediaType] {
         [
             .init("bhttp", ""),
             .init("cpim", "CPIM"),

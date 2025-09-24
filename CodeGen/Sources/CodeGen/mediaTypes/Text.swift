@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var textMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var textMediaTypes: [MediaType] {
         [
             .init("_1dInterleavedParityfec", "1d-interleaved-parityfec"),
             .init("cacheManifest", "cache-manifest"),

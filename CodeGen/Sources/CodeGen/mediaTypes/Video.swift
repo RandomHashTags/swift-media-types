@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var videoMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var videoMediaTypes: [MediaType] {
         [
             .init("_1dInterleavedParityfec", "1d-interleaved-parityfec"),
             .init("_3gpp", "3gpp"),

@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var fontMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var fontMediaTypes: [MediaType] {
         [
             .init("collection", ""),
             .init("otf", ""),

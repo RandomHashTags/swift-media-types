@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var audioMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var audioMediaTypes: [MediaType] {
         [
             .init("aac", "", fileExtensions: ["aac"]),
 

@@ -1,7 +1,7 @@
 
 #if Message
 
-public enum HTTPMediaTypeMessage: HTTPMediaTypeProtocol {
+public enum MediaTypeMessage: MediaTypeProtocol {
     case bhttp
     case cpim
     case deliveryStatus
@@ -64,7 +64,7 @@ public enum HTTPMediaTypeMessage: HTTPMediaTypeProtocol {
 }
 
 #if MessageFileExtensionInit
-extension HTTPMediaTypeMessage {
+extension MediaTypeMessage {
     #if Inlinable
     @inlinable
     #endif
@@ -78,7 +78,7 @@ extension HTTPMediaTypeMessage {
 #endif
 
 #if MessageRawValues
-extension HTTPMediaTypeMessage: RawRepresentable {
+extension MediaTypeMessage: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

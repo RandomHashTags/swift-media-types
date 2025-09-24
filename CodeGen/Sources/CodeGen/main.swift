@@ -3,7 +3,7 @@ import Foundation
 
 var generationPath = #filePath
 generationPath.removeLast("CodeGen/Sources/CodeGen/main.swift".count)
-generationPath += "Sources/HTTPMediaTypes"
+generationPath += "Sources/MediaTypes/types"
 
 
 let sourceDestination = URL(filePath: generationPath)
@@ -15,7 +15,7 @@ try FileManager.default.createDirectory(
 
 try await withThrowingDiscardingTaskGroup { group in
     group.addTask {
-        try await generateHTTPMediaTypes()
+        try await generateMediaTypes()
     }
 }
 
@@ -41,6 +41,6 @@ func writeToDisk(_ values: [(fileName: String, content: String)]) async throws {
     }
 }
 
-func generateHTTPMediaTypes() async throws {
-    try await writeToDisk(HTTPMediaTypes.generateSources())
+func generateMediaTypes() async throws {
+    try await writeToDisk(MediaTypes.generateSources())
 }

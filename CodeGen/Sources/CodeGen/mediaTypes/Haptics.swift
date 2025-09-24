@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var hapticsMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var hapticsMediaTypes: [MediaType] {
         [
             .init("ivs", ""),
             .init("hjif", ""),

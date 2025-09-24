@@ -1,5 +1,5 @@
 
-struct HTTPMediaTypes {
+struct MediaTypes {
     static func generateSources() -> [(fileName: String, content: String)] {
         let array = [
             ("Application", applicationMediaTypes),
@@ -14,11 +14,11 @@ struct HTTPMediaTypes {
             ("Video", videoMediaTypes)
         ]
         return array.map({
-            ("HTTPMediaType\($0.0).swift", generate(type: $0.0, $0.1))
+            ("\($0.0).swift", generate(type: $0.0, $0.1))
         })
     }
 
-    private static func generate(type: String, _ values: [HTTPMediaType]) -> String {
+    private static func generate(type: String, _ values: [MediaType]) -> String {
         let enumCases = values.map({ "    case \($0.subType)" }).joined(separator: "\n")
         let fileExtensions = values.compactMap({
             guard !$0.fileExtensions.isEmpty else { return nil }
@@ -35,12 +35,12 @@ struct HTTPMediaTypes {
             return "        case .\($0.subType): \(value)"
         }).joined(separator: "\n")
 
-        let name = "HTTPMediaType\(type)"
+        let name = "MediaType\(type)"
         return """
         
         #if \(type)
 
-        public enum \(name): HTTPMediaTypeProtocol {
+        public enum \(name): MediaTypeProtocol {
         \(enumCases)
 
             #if Inlinable

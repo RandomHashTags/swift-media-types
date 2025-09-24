@@ -1,5 +1,5 @@
 
-struct HTTPMediaType {
+struct MediaType {
     let subType:String
     let value:String
     let fileExtensions:[String]

@@ -1,11 +1,11 @@
 
-/// Core protocol that represents usable media/content types.
-public protocol HTTPMediaTypeProtocol: CustomStringConvertible, Sendable {
+/// Represents usable media/content types.
+public protocol MediaTypeProtocol: CustomStringConvertible, Sendable {
     var type: String { get }
     var subType: String { get }
 }
 
-extension HTTPMediaTypeProtocol {
+extension MediaTypeProtocol {
     #if Inlinable
     @inlinable
     #endif

@@ -1,16 +1,17 @@
 
-#if Haptics
+#if Audio
 
-public enum HTTPMediaTypeHaptics: HTTPMediaTypeProtocol {
-    case ivs
-    case hjif
-    case hmpg
+public enum MediaTypeAudio: MediaTypeProtocol {
+    case aac
+    case mp4
+    case mpeg
+    case ogg
 
     #if Inlinable
     @inlinable
     #endif
     public var type: String {
-        "haptics"
+        "audio"
     }
 
     #if Inlinable
@@ -18,29 +19,33 @@ public enum HTTPMediaTypeHaptics: HTTPMediaTypeProtocol {
     #endif
     public var subType: String {
         switch self {
-        case .ivs: "ivs"
-        case .hjif: "hjif"
-        case .hmpg: "hmpg"
+        case .aac: "aac"
+        case .mp4: "mp4"
+        case .mpeg: "mpeg"
+        case .ogg: "ogg"
         }
     }
 }
 
-#if HapticsFileExtensionInit
-extension HTTPMediaTypeHaptics {
+#if AudioFileExtensionInit
+extension MediaTypeAudio {
     #if Inlinable
     @inlinable
     #endif
     public init?(fileExtension: some StringProtocol) {
         switch fileExtension {
-
+        case "aac": self = .aac
+        case "mp4": self = .mp4
+        case "mpeg": self = .mpeg
+        case "ogg": self = .ogg
         default: return nil
         }
     }
 }
 #endif
 
-#if HapticsRawValues
-extension HTTPMediaTypeHaptics: RawRepresentable {
+#if AudioRawValues
+extension MediaTypeAudio: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable
@@ -48,9 +53,10 @@ extension HTTPMediaTypeHaptics: RawRepresentable {
     #endif
     public init?(rawValue: RawValue) {
         switch rawValue {
-        case "ivs": self = .ivs
-        case "hjif": self = .hjif
-        case "hmpg": self = .hmpg
+        case "aac": self = .aac
+        case "mp4": self = .mp4
+        case "mpeg": self = .mpeg
+        case "ogg": self = .ogg
         default: return nil
         }
     }
@@ -60,9 +66,10 @@ extension HTTPMediaTypeHaptics: RawRepresentable {
     #endif
     public var rawValue: String {
         switch self {
-        case .ivs: "ivs"
-        case .hjif: "hjif"
-        case .hmpg: "hmpg"
+        case .aac: "aac"
+        case .mp4: "mp4"
+        case .mpeg: "mpeg"
+        case .ogg: "ogg"
         }
     }
 }

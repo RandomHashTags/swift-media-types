@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var multipartMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var multipartMediaTypes: [MediaType] {
         [
             .init("alternative", ""),
             .init("appledouble", ""),

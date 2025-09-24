@@ -1,7 +1,7 @@
 
 #if Font
 
-public enum HTTPMediaTypeFont: HTTPMediaTypeProtocol {
+public enum MediaTypeFont: MediaTypeProtocol {
     case collection
     case otf
     case sfnt
@@ -32,7 +32,7 @@ public enum HTTPMediaTypeFont: HTTPMediaTypeProtocol {
 }
 
 #if FontFileExtensionInit
-extension HTTPMediaTypeFont {
+extension MediaTypeFont {
     #if Inlinable
     @inlinable
     #endif
@@ -46,7 +46,7 @@ extension HTTPMediaTypeFont {
 #endif
 
 #if FontRawValues
-extension HTTPMediaTypeFont: RawRepresentable {
+extension MediaTypeFont: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

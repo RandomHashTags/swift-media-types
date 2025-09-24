@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var imageMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var imageMediaTypes: [MediaType] {
         [
             .init("aces", ""),
             .init("apng", ""),

@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var modelMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var modelMediaTypes: [MediaType] {
         [
             .init("_3mf", "3mf"),
             .init("e57", ""),

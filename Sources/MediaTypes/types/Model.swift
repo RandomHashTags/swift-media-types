@@ -1,7 +1,7 @@
 
 #if Model
 
-public enum HTTPMediaTypeModel: HTTPMediaTypeProtocol {
+public enum MediaTypeModel: MediaTypeProtocol {
     case _3mf
     case e57
     case example
@@ -102,7 +102,7 @@ public enum HTTPMediaTypeModel: HTTPMediaTypeProtocol {
 }
 
 #if ModelFileExtensionInit
-extension HTTPMediaTypeModel {
+extension MediaTypeModel {
     #if Inlinable
     @inlinable
     #endif
@@ -116,7 +116,7 @@ extension HTTPMediaTypeModel {
 #endif
 
 #if ModelRawValues
-extension HTTPMediaTypeModel: RawRepresentable {
+extension MediaTypeModel: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

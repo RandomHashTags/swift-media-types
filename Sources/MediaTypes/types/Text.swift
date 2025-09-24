@@ -1,7 +1,7 @@
 
 #if Text
 
-public enum HTTPMediaTypeText: HTTPMediaTypeProtocol {
+public enum MediaTypeText: MediaTypeProtocol {
     case _1dInterleavedParityfec
     case cacheManifest
     case calendar
@@ -202,7 +202,7 @@ public enum HTTPMediaTypeText: HTTPMediaTypeProtocol {
 }
 
 #if TextFileExtensionInit
-extension HTTPMediaTypeText {
+extension MediaTypeText {
     #if Inlinable
     @inlinable
     #endif
@@ -223,7 +223,7 @@ extension HTTPMediaTypeText {
 #endif
 
 #if TextRawValues
-extension HTTPMediaTypeText: RawRepresentable {
+extension MediaTypeText: RawRepresentable {
     public typealias RawValue = String
 
     #if Inlinable

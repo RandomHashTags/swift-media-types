@@ -1,6 +1,6 @@
 
-extension HTTPMediaTypes {
-    static var applicationMediaTypes: [HTTPMediaType] {
+extension MediaTypes {
+    static var applicationMediaTypes: [MediaType] {
         [
             .init("calendarJSON", "calendar+json"),
             .init("calendarXML", "calendar+xml"),
