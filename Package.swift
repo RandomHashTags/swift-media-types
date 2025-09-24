@@ -99,7 +99,13 @@ let package = Package(
             ]
         ),
 
+        .trait(name: "MediaTypeCustomStringConvertible"),
+        .trait(name: "MediaTypeHashable"),
+
         .default(enabledTraits: [
+            "MediaTypeCustomStringConvertible",
+            "MediaTypeHashable",
+
             "MediaTypes",
             "RawValues",
             "FileExtensionInits"
