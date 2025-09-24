@@ -8,6 +8,10 @@ let package = Package(
         .library(
             name: "MediaTypes",
             targets: ["MediaTypes"]
+        ),
+        .library(
+            name: "MediaTypesSwiftSyntax",
+            targets: ["MediaTypesSwiftSyntax"]
         )
     ],
     traits: [
@@ -101,19 +105,29 @@ let package = Package(
 
         .trait(name: "MediaTypeCustomStringConvertible"),
         .trait(name: "MediaTypeHashable"),
+        .trait(name: "MediaTypeParsable"),
 
         .default(enabledTraits: [
-            "MediaTypeCustomStringConvertible",
-            "MediaTypeHashable",
-
             "MediaTypes",
             "RawValues",
             "FileExtensionInits"
         ])
     ],
+    dependencies: [
+        .package(url: "https://github.com/swiftlang/swift-syntax", from: "601.0.1"),
+    ],
     targets: [
         .target(
             name: "MediaTypes"
+        ),
+        .target(
+            name: "MediaTypesSwiftSyntax",
+            dependencies: [
+                "MediaTypes",
+                .product(name: "SwiftSyntax", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                .product(name: "SwiftDiagnostics", package: "swift-syntax")
+            ]
         ),
         .testTarget(
             name: "swift-media-typesTests",
